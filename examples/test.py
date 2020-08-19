@@ -65,17 +65,25 @@
 #     #     print("yooo")
 
 
-import json
+# import json
 
-# with open("todos.json") as json_file:
+# # with open("todos.json") as json_file:
+# #     data=json.load(json_file)
+# #     for p in data: # select * from todos        
+# #         if not p["completed"] and "tempora" in p["title"]: # where completed is false and title like %tempora%
+# #             print(p)            
+
+# with open("users.json") as json_file:
 #     data=json.load(json_file)
-#     for p in data: # select * from todos        
-#         if not p["completed"] and "tempora" in p["title"]: # where completed is false and title like %tempora%
-#             print(p)            
+#     #tous les employé de la company "Romaguera-Crona"
+#     for p in data:
+#         if "Romaguera-Crona" in p["company"]["name"]:                
+#             print(p["name"])
 
-with open("users.json") as json_file:
-    data=json.load(json_file)
-    #tous les employé de la company "Romaguera-Crona"
-    for p in data:
-        if "Romaguera-Crona" in p["company"]["name"]:                
-            print(p["name"])
+class MonException(Exception):
+	pass
+
+try:
+	raise MonException("Mon message d'erreur")
+except MonException:
+	print ("Le message d'erreur ")
